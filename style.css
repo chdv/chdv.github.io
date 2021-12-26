@@ -25,3 +25,7 @@ body {
     font-size: 120%;
     font-weight: bold;
 }
+
+.right {
+    float: right;
+}
