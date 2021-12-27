@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        Паттерны проектирования,
+        используемые в Spring</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <table align="center" bgcolor="white" cellpadding="30" width="600">
+        <tr>
+            <td>
+                <table width="100%" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td valign="top">
+                            <span class="h1">
+                                Паттерны проектирования,
+                                используемые в Spring</span>
+                        </td>
+                        <td align="right"><img src="img/spring.png" width="100" /></td>
+                    </tr>
+                </table>
+
+                <span class="h3">Proxy (Заместитель)</span>
+                <br/>
+                Паттерн Proxy широко используется в AOP и remoting.
+                <br/><br/>
+
+                <span class="h3">Singleton (Одиночка)</span>
+                <br/>                
+                Паттерн Singleton гарантирует, что в памяти будет существовать только один экземпляр объекта, который будет предоставлять сервисы.
+                В Spring область видимости бина (scope) по умолчанию равна singleton и IoC-контейнер создаёт ровно один экземпляр объекта на Spring IoC-контейнер.
+                <br/><br/>
+                
+                <span class="h3">Factory (Фабрика)</span>
+                <br/>
+                Этот паттерн позволяет инициализировать объект через публичный статический метод, называемый фабричным методом.
+                Spring использует паттерн Factory для создания объекта бина с использованием следующих двух подходов.
+                BeanFactory
+                ApplicationContext
+                <br/><br/>
+
+                <span class="h3">Template (Шаблон)</span>
+                <br/>
+                Этот паттерн широко используется для работы с повторяющимся бойлерплейт кодом (таким как, закрытие соединений и т. п.).
+                Например, JdbcTemplate, JmsTemplate, JpaTemplate 
+                <br/><br/>
+
+                <span class="h3">Model View Controller (Модель-Представление-Контроллер)</span>
+                <br/>
+                Преимущество Spring MVC в том, что ваши контроллеры являются POJO, а не сервлетами. Это облегчает тестирование контроллеров.
+
+                <br/><br/>
+                <span class="h3">Front Controller (Контроллер запросов)</span>
+                <br/>
+                Spring предоставляет DispatcherServlet, чтобы гарантировать, что входящий запрос будет отправлен вашим контроллерам.
+
+                <br/><br/>
+                <span class="h3">View Helper (Вспомогательный компонент представления)</span>
+                <br/>
+                View Helper отделяет статическое содержимое в представлении, такое как JSP, от обработки бизнес-логики.
+
+                <br/><br/>
+                <span class="h3">Dependency injection и inversion of control (IOC) (Внедрение зависимостей и инверсия управления)</span>
+                <br/>
+                IoC-контейнер в Spring, отвечает за создание объекта, связывание объектов вместе, конфигурирование объектов и обработку всего их жизненного цикла от создания до полного уничтожения.
+
+                <br/><br/>
+                <span class="h3">Service Locator (Локатор служб)</span>
+                <br/>
+                ServiceLocatorFactoryBean сохраняет информацию обо всех бинах в контексте. Когда клиентский код запрашивает сервис (бин) по имени, он просто находит этот компонент в контексте и возвращает его. Клиентскому коду не нужно писать код, связанный со Spring, чтобы найти бин.
+
+                <br/><br/>
+                <span class="h3">Observer-Observable (Наблюдатель)</span>
+                <br/>
+                Используется в механизме событий ApplicationContext.
+
+                <br/><br/>
+                <span class="h3">Context Object (Контекстный объект)</span>
+                <br/>
+                Паттерн Context Object, инкапсулирует системные данные в объекте-контексте для совместного использования другими частями приложения без привязки приложения к конкретному протоколу.
+                ApplicationContext является центральным интерфейсом в приложении Spring для предоставления информации о конфигурации приложения.
+
+                <br/><br/>
+                <span class="h3">Abstract Factory (Абстрактная фабрика)</span>
+                <br/>
+                В основе интерфейса FactoryBean из фреймворка Spring лежит паттерн проектирования Abstract Factory. Spring предоставляет множество реализаций данного интерфейса, например ProxyFactoryBean, JndiFactoryBean, LocalSessionFactoryBean, LocalContainerEntityManagerFactoryBean и т. д.
+
+                <br/><br/>
+                <span class="h3">Builder (Строитель)</span>
+                <br/>
+                Фреймворк Spring прозрачным образом реализует паттерн проектирования
+                Builder для некоторых функциональностей. В Spring на паттерне проектирования Builder основаны следующие классы:
+                EmbeddedDatabaseBuilder;
+                AuthenticationManagerBuilder;
+                UriComponentsBuilder;
+                BeanDefinitionBuilder;
+                MockMvcWebClientBuilder.
+
+                <br/><br/>
+                <span class="h3">Object Pool (Пул объектов)</span>
+                <br/>
+                Spring реализует паттерн Object Pool для предоставления приложению источника данных наиболее эффективным способом. Суть паттерна определяется так: создание объектов требует больших затрат, чем переиспользование.
+                Spring позволяет реализовать паттерн Object Pool для переиспользования
+                объекта DataSource в приложении.
+
+                <br/><br/>
+                <span class="h3">Data Access Object (Объект доступа к данным)</span>
+                <br/>
+                В Spring JDBC DAO — обобщенный объект для доступа к данным с бизнес-уровня, предоставляющий согласованный интерфейс для сервисов бизнес-уровня. Основная задача классов DAO состоит в абстрагировании
+                нижележащей логики доступа к данным от сервисов на бизнес-уровне.
+
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
