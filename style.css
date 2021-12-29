@@ -29,3 +29,11 @@ body {
 .right {
     float: right;
 }
+
+.center {
+    text-align: center;
+}
+
+.rounded {
+    border-radius: 50%;
+}
